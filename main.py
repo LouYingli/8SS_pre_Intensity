@@ -107,7 +107,7 @@ import parallelSimuMeta as ps
 #os.chdir(pathway)
 for cz in climate:
     model_results,run_time = ps.parallelSimu(cz,1)
-rmtree('./Model/update_models')
+#rmtree('./Model/update_models')
 print run_time
 
 #########################################################################################

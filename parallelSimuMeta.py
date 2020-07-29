@@ -143,6 +143,11 @@ def runModel(climate,eplus_path,weather_file,eplus_file,param_value,output_file,
         total_source_energy_per_total_building_area= float(total_source_energy_per_total_building_area_html.text)*0.088055066
         data.append(total_site_energy_per_total_building_area)
         data.append(total_source_energy_per_total_building_area)
+         
+        #record the data in the './results/energy_data.csv'
+        with open('./results/energy_data.csv', 'ab') as csvfile:
+            energy_data = csv.writer(csvfile, delimiter=',')
+            energy_data.writerow(data)
 
     else:
         with open('./results/energy_data_err.csv', 'ab') as csvfile:
